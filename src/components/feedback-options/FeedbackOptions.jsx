@@ -24,7 +24,5 @@ export const FeedbackOption = ({ handleIcrement, arrayNamesState }) => {
 
 FeedbackOption.propTypes = {
   handleIcrement: PropTypes.func.isRequired,
-  arrayNamesState: PropTypes.arrayOf(
-    PropTypes.oneOf(['good', 'neutral', 'bad'])
-  ).isRequired,
+  arrayNamesState: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
