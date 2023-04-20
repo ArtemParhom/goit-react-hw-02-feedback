@@ -1,19 +1,9 @@
-.statisticsBox {
+.statisticList {
+  padding: 0;
 }
-.statisticsTitle {
-  font-size: 32px;
-  color: rgb(139, 139, 139);
-}
-.statisticsList {
-  border: 1px solid #000;
-  border-radius: 25px;
+.statisticItem {
   list-style: none;
-  text-align: left;
-  margin: 30px 160px;
-  padding: 30px;
-}
-.statisticsElement {
-  font-size: 24px;
-  line-height: 2;
-  font-weight: 500;
+  text-transform: capitalize;
+  font-size: 28px;
+  line-height: 1.5;
 }

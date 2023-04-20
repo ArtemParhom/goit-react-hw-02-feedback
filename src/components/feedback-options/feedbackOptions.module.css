@@ -1,22 +1,20 @@
-.buttonsBox {
-  text-align: center;
-}
-.buttons {
-  display: inline-block;
-  gap: 5px;
-}
-.buttonBtn {
-  display: inline-block;
-  width: 100px;
-  height: 40px;
-  font-size: 28px;
-  margin-right: 25px;
-}
-.buttonBtn:nth-last-child(1) {
-  margin-right: 0;
+.feedbackOption {
+  width: 100%;
 }
 
-.buttonBtn:active {
-  background-color: rgba(0, 0, 255, 0.331);
+.feedbackOptionBtn {
+  text-transform: capitalize;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border: 1px solid #c1c1c1;
+  border-radius: 10px;
+  background-color: white;
+}
+.feedbackOptionBtn:active {
+  background-color: #3485f4;
   color: white;
+}
+.feedbackOptionBtn:not(:last-child) {
+  margin-right: 10px;
 }

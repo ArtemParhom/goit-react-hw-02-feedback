@@ -1,42 +1,22 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { nanoid } from 'nanoid';
 import css from './statistics.module.css';
 
-const Statistics = ({ good, neutral, bad }) => {
-  const countTotalFeedback = () => {
-    return good + neutral + bad;
-  };
-  const countPositiveFeedbackPercentage = () => {
-    return (good / countTotalFeedback()) * 100;
-  };
-
-  const colon = ':';
+export const Statistics = ({ arrayStatistics }) => {
   return (
-    <div className={css.statisticsBox}>
-      <h3 className={css.statisticsTitle}>Statistics</h3>
-      <ul className={css.statisticsList}>
-        <li className={css.statisticsElement}>
-          good{colon} {good}
-        </li>
-        <li className={css.statisticsElement}>
-          neutral{colon} {neutral}
-        </li>
-        <li className={css.statisticsElement}>
-          bad{colon} {bad}
-        </li>
-        <li className={css.statisticsElement}>
-          total{colon} {countTotalFeedback()}
-        </li>
-        {countPositiveFeedbackPercentage() ? (
-          <li className={css.statisticsElement}>
-            positive percentage{colon}{' '}
-            {Math.round(countPositiveFeedbackPercentage())}%
+    <ul className={css.statisticList}>
+      {arrayStatistics.map(e => {
+        return (
+          <li key={nanoid(4)} className={css.statisticItem}>
+            {Object.keys(e)}: {Object.values(e)}
           </li>
-        ) : (
-          ''
-        )}
-      </ul>
-    </div>
+        );
+      })}
+    </ul>
   );
 };
 
-export default Statistics;
+Statistics.propTypes = {
+  arrayStatistics: PropTypes.array.isRequired,
+};
