@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { nanoid } from 'nanoid';
 import css from './feedbackOptions.module.css';
 
 export const FeedbackOption = ({ handleIcrement, arrayNamesState }) => {
@@ -10,7 +9,7 @@ export const FeedbackOption = ({ handleIcrement, arrayNamesState }) => {
         return (
           <button
             className={css.feedbackOptionBtn}
-            key={nanoid(4)}
+            key={name}
             name={name}
             type="button"
             onClick={handleIcrement}
@@ -25,5 +24,7 @@ export const FeedbackOption = ({ handleIcrement, arrayNamesState }) => {
 
 FeedbackOption.propTypes = {
   handleIcrement: PropTypes.func.isRequired,
-  arrayNamesState: PropTypes.array.isRequired,
+  arrayNamesState: PropTypes.arrayOf(
+    PropTypes.oneOf(['good', 'neutral', 'bad'])
+  ).isRequired,
 };

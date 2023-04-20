@@ -18,5 +18,13 @@ export const Statistics = ({ arrayStatistics }) => {
 };
 
 Statistics.propTypes = {
-  arrayStatistics: PropTypes.array.isRequired,
+  arrayStatistics: PropTypes.arrayOf(
+    PropTypes.shape({
+      good: PropTypes.number,
+      neutral: PropTypes.number,
+      bad: PropTypes.number,
+      total: PropTypes.number,
+      percentages: PropTypes.string,
+    })
+  ).isRequired,
 };
